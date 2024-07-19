@@ -26,5 +26,5 @@ export async function fetchRecipes() {
 }
 
 if (process.isBun && import.meta.main) {
-  console.table(await fetchRecipes());
+  fetchRecipes().then(console.table);
 }
