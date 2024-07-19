@@ -22,7 +22,12 @@ export function parseRecipes(html: string) {
   const recipes: Recipe[] = [];
 
   for (const match of recipeMatches) {
-    const [, itemName, materials, recipeImage, itemDescription] = match;
+    let [, itemName, materials, recipeImage, itemDescription] = match;
+
+    itemName = cleanHtml(itemName);
+    materials = cleanHtml(materials);
+    itemDescription = cleanHtml(itemDescription);
+
     recipes.push({
       itemName,
       itemDescription,
@@ -32,6 +37,10 @@ export function parseRecipes(html: string) {
   }
 
   return recipes;
+}
+
+function cleanHtml(html: string) {
+  return html.replace(/<[^>]*>/g, "");
 }
 
 if (process.isBun && import.meta.main) {
