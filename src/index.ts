@@ -35,7 +35,7 @@ export function parseRecipes(html: string) {
       itemDescription,
 
       materials,
-      materialsList: materials.split(/\s*(?:&amp;)\s*|\s+or\s+/i),
+      materialsList: materials.split(/\s*(?:&amp;|,)\s*|\s+or\s+/i),
 
       recipeImage: new URL(recipeImage, baseUrl),
     });
