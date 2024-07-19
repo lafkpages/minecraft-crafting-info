@@ -49,5 +49,7 @@ function cleanHtml(html: string) {
 }
 
 if (process.isBun && import.meta.main) {
-  fetchRecipes().then(console.table);
+  fetchRecipes().then((recipes) =>
+    console.table(recipes, ["itemName", "itemDescription", "materialsList"])
+  );
 }
