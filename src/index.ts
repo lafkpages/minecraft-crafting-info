@@ -8,6 +8,8 @@ export interface Recipe {
   itemDescription: string;
 
   materials: string;
+  materialsList: string[];
+
   recipeImage: URL;
 }
 
@@ -31,8 +33,11 @@ export function parseRecipes(html: string) {
     recipes.push({
       itemName,
       itemDescription,
-      recipeImage: new URL(recipeImage, baseUrl),
+
       materials,
+      materialsList: materials.split(/\s*(?:&amp;)\s*|\s+or\s+/i),
+
+      recipeImage: new URL(recipeImage, baseUrl),
     });
   }
 
