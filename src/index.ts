@@ -14,6 +14,10 @@ export interface Recipe {
 export async function fetchRecipes() {
   const html = await fetch(baseUrl).then((r) => r.text());
 
+  return parseRecipes(html);
+}
+
+export function parseRecipes(html: string) {
   const recipeMatches = html.matchAll(REGEX);
   const recipes: Recipe[] = [];
 
