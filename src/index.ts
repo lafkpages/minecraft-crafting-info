@@ -47,9 +47,3 @@ export function parseRecipes(html: string) {
 function cleanHtml(html: string) {
   return html.replace(/<[^>]*>/g, "");
 }
-
-if (process.isBun && import.meta.main) {
-  fetchRecipes().then((recipes) =>
-    console.table(recipes, ["itemName", "itemDescription", "materialsList"])
-  );
-}
