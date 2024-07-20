@@ -1,6 +1,6 @@
 {
   "name": "minecraft-crafting-info",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Scrapes https://www.minecraftcrafting.info for crafting recipes.",
   "module": "src/index.ts",
   "types": "src/index.ts",
