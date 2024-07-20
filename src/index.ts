@@ -1,5 +1,5 @@
 const REGEX =
-  /<tr>\s*<td.*?>\s*(.+?)\s*<\/td>\s*<td.*?>\s*(.+?)\s*<\/td>\s*<td.*?>\s*<img.*?src="(.+?)".+?<\/td>\s*<td.*?>\s*(.+?)\s*<\/td>/gim;
+  /<tr>\s*<td.*?>\s*(.+?)\s*<\/td>\s*<td.*?>\s*(.+?)\s*<\/td>\s*<td.*?>\s*<img.*?src="(.+?)".+?<\/td>\s*<td.*?>\s*(.+?)\s*<\/td>/gi;
 
 export const baseUrl = "https://www.minecraftcrafting.info";
 
