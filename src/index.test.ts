@@ -1,4 +1,5 @@
 import { test, expect } from "bun:test";
+
 import { fetchRecipes } from ".";
 
 test("fetchRecipes", async () => {
